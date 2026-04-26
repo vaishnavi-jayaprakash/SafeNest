@@ -6,12 +6,14 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import LiveMapPage from './pages/LiveMapPage'
 import ReportingPage from './pages/ReportingPage'
+import SignupPage from './pages/SignUpPage'
 import './App.css'
 
 function App() {
   const location = useLocation()
 
-  const hideNavbar = location.pathname === '/login'
+  const hideNavbarRoutes = ['/login', '/signup']
+  const hideNavbar = hideNavbarRoutes.includes(location.pathname)
 
   return (
     <div className="app-shell">
@@ -22,6 +24,7 @@ function App() {
           <div className="page-container">
             <Routes>
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
               <Route path="/" element={<HomePage />} />
               <Route path="/live-map" element={<LiveMapPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />

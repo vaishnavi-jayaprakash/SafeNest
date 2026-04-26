@@ -421,6 +421,18 @@ button.active {
   width: 16px;
   height: 16px;
 }
+.auth-switch {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.auth-switch a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
 
 .link-btn {
   background: transparent;

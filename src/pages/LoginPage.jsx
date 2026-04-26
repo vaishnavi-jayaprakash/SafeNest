@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 function LoginPage() {
   return (
     <section className="page login-page">
@@ -29,8 +30,12 @@ function LoginPage() {
               Forgot password?
             </button>
           </div>
+          
 
           <button type="submit">Sign in</button>
+          <p className="auth-switch">
+            Don’t have an account? <Link to="/signup">Sign up</Link>
+          </p>
         </form>
       </div>
     </section>
