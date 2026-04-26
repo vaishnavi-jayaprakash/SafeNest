@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import AboutPage from './pages/AboutPage'
 import DashboardPage from './pages/DashboardPage'
@@ -9,10 +9,15 @@ import ReportingPage from './pages/ReportingPage'
 import './App.css'
 
 function App() {
+  const location = useLocation()
+
+  const hideNavbar = location.pathname === '/login'
+
   return (
     <div className="app-shell">
       <div className="content-wrap">
-        <Navbar />
+        {!hideNavbar && <Navbar />}   
+
         <main>
           <div className="page-container">
             <Routes>
